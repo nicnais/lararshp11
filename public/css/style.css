@@ -1,0 +1,260 @@
+/* --- 1. Import Font Google (Poppins) agar terlihat modern --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* --- 2. Reset & Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa; /* Abu-abu sangat muda agar mata tidak cepat lelah */
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* --- 3. Navigasi Atas --- */
+.nav-atas {
+    background-color: #003366; /* Biru gelap profesional */
+    padding: 15px 5%;
+    display: flex;
+    justify-content: flex-end; /* Menu rata kanan */
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-atas a {
+    color: #fff;
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.nav-atas a:hover {
+    background-color: #ffca28; /* Aksen Kuning Unair */
+    color: #003366;
+}
+
+/* Tombol Login dibuat beda agar menonjol */
+.nav-atas a[href*="login"] {
+    background-color: #ffca28;
+    color: #003366;
+    font-weight: 700;
+}
+
+.nav-atas a[href*="login"]:hover {
+    background-color: #e0b120;
+}
+
+/* --- 4. Banner --- */
+.banner {
+    width: 100%;
+    overflow: hidden;
+    max-height: 500px; /* Batasi tinggi banner agar tidak terlalu besar */
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Agar gambar tidak gepeng */
+    display: block;
+}
+
+/* --- 5. Navigasi Bawah --- */
+.nav-bawah {
+    background-color: #00509e; /* Biru sedikit lebih terang */
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.nav-bawah a {
+    color: white;
+    margin: 0 20px;
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+}
+
+/* Efek garis bawah saat hover */
+.nav-bawah a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffca28;
+    transition: width 0.3s;
+}
+
+.nav-bawah a:hover::after {
+    width: 100%;
+}
+
+/* --- 6. Section Dua Kolom (Video & Teks) --- */
+.dua-kolom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    gap: 40px; /* Jarak antar kolom */
+}
+
+.dua-kolom iframe {
+    width: 100%;
+    max-width: 560px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.dua-kolom .teks {
+    flex: 1; /* Mengisi sisa ruang */
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-left: 5px solid #ffca28; /* Aksen garis kuning di kiri */
+}
+
+/* --- 7. Section Berita --- */
+.berita {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.berita h2 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    position: relative;
+}
+
+/* Garis hiasan di bawah judul */
+.berita h2::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background-color: #ffca28;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.berita-wrapper {
+    display: grid;
+    /* Grid responsif: otomatis mengatur kolom */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.berita-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.berita-item:hover {
+    transform: translateY(-10px); /* Efek naik saat hover */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.berita-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.berita-item-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.berita-item .judul {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.berita-item p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.berita-item span {
+    font-size: 0.85rem;
+    color: #999;
+    font-style: italic;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    display: block;
+}
+
+/* --- 8. Footer --- */
+footer {
+    background-color: #1a1a1a;
+    color: #bbb;
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 60px;
+}
+
+footer h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* --- 9. Responsiveness (Tampilan Mobile) --- */
+@media (max-width: 768px) {
+    .nav-atas {
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-atas a {
+        margin: 5px;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .dua-kolom {
+        flex-direction: column; /* Kolom jadi tumpuk ke bawah */
+        text-align: center;
+    }
+
+    .nav-bawah {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .berita-wrapper {
+        grid-template-columns: 1fr; /* Berita jadi 1 kolom di HP */
+    }
+}
